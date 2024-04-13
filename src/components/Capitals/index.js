@@ -34,6 +34,14 @@ class Capitals extends Component {
     selectedOptionId: 'NEW_DELHI',
   }
 
+  handleCapitalChange = event => {
+    const selectedCapitalId = event.target.value
+    const selectedCountry = countryAndCapitalsList.find(
+      country => country.id === selectedCapitalId,
+    )
+    this.setState({selectedOptionId: selectedCapitalId})
+  }
+
   render() {
     const {selectedOptionId} = this.state
     const selectedCountry = countryAndCapitalsList.find(
@@ -44,9 +52,12 @@ class Capitals extends Component {
         <div className="capitals-container">
           <h1 className="heading">Countries and Capitals</h1>
           <div className="question-container">
-            <select>
+            <select
+              value={selectedOptionId}
+              onChange={this.handleCapitalChange}
+            >
               {countryAndCapitalsList.map(eachCountry => (
-                <option value={eachCountry.id}>
+                <option key={eachCountry.id} value={eachCountry.id}>
                   {eachCountry.capitalDisplayText}
                 </option>
               ))}

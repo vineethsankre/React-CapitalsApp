@@ -30,7 +30,15 @@ const countryAndCapitalsList = [
 ]
 
 class Capitals extends Component {
+  state = {
+    selectedOptionId: 'NEW_DELHI',
+  }
+
   render() {
+    const {selectedOptionId} = this.state
+    const selectedCountry = countryAndCapitalsList.find(
+      eachCountry => selectedOptionId === eachCountry.id,
+    ).country
     return (
       <div className="app-container">
         <div className="capitals-container">
@@ -43,8 +51,9 @@ class Capitals extends Component {
                 </option>
               ))}
             </select>
-            <p>is capital of which country?</p>
+            <p>is capital of which country</p>
           </div>
+          <p>{selectedCountry}</p>
         </div>
       </div>
     )

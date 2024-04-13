@@ -58,9 +58,9 @@ class Capitals extends Component {
               value={activeCapitalId}
               onChange={onChangeCapital}
             >
-              {countryAndCapitalsList.map(eachCountry => (
-                <option key={eachCountry.id} value={eachCountry.id} className="option">
-                  {eachCountry.capitalDisplayText}
+              {countryAndCapitalsList.map(eachCapital => (
+                <option key={eachCapital.id} value={eachCapital.id} className="option">
+                  {eachCapital.capitalDisplayText}
                 </option>
               ))}
             </select>

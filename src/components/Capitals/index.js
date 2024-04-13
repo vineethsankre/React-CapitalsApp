@@ -35,6 +35,16 @@ class Capitals extends Component {
       <div className="app-container">
         <div className="capitals-container">
           <h1 className="heading">Countries and Capitals</h1>
+          <div className="question-container">
+            <select>
+              {countryAndCapitalsList.map(eachCountry => (
+                <option value={eachCountry.id}>
+                  {eachCountry.capitalDisplayText}
+                </option>
+              ))}
+            </select>
+            <p>is capital of which country?</p>
+          </div>
         </div>
       </div>
     )

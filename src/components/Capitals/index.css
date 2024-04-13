@@ -17,3 +17,7 @@
   color: #1e293b;
   font-weight: 500;
 }
+.question-container{
+  display: flex;
+  flex-direction: row;
+}

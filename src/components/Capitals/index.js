@@ -31,7 +31,7 @@ const countryAndCapitalsList = [
 
 class Capitals extends Component {
   state = {
-    selectedOptionId: 'NEW_DELHI',
+    activeCapitalId: countryAndCapitalsList[0].id,
   }
 
   handleCapitalChange = event => {
@@ -43,9 +43,9 @@ class Capitals extends Component {
   }
 
   render() {
-    const {selectedOptionId} = this.state
+    const {activeCapitalId} = this.state
     const selectedCountry = countryAndCapitalsList.find(
-      eachCountry => selectedOptionId === eachCountry.id,
+      eachCountry => activeCapitalId === eachCountry.id,
     ).country
     return (
       <div className="app-container">
@@ -53,7 +53,7 @@ class Capitals extends Component {
           <h1 className="heading">Countries and Capitals</h1>
           <div className="question-container">
             <select
-              value={selectedOptionId}
+              value={activeCapitalId}
               onChange={this.handleCapitalChange}
             >
               {countryAndCapitalsList.map(eachCountry => (

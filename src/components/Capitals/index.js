@@ -33,11 +33,16 @@ class Capitals extends Component {
   state = {
     activeCapitalId: countryAndCapitalsList[0].id,
   }
+  getCountry = () => {
+    const {activeCapitalId} = this.state
+    const activeCountryAndCapital = countryAndCapitalsList.find(
+      eachCapital => eachCapital.id === activeCapitalId,
+    )
+    return activeCountryAndCapital.country
+  }
   render() {
     const {activeCapitalId} = this.state
-    const selectedCountry = countryAndCapitalsList.find(
-      eachCountry => activeCapitalId === eachCountry.id,
-    ).country
+    const country = this.getCountry(activeCapitalId)
     return (
       <div className="app-container">
         <div className="capitals-container">

@@ -33,6 +33,11 @@ class Capitals extends Component {
   state = {
     activeCapitalId: countryAndCapitalsList[0].id,
   }
+
+  onChangeCapital = event => {
+    this.setState({activeCapitalId: event.target.value})
+  }
+  
   getCountry = () => {
     const {activeCapitalId} = this.state
     const activeCountryAndCapital = countryAndCapitalsList.find(
@@ -50,6 +55,7 @@ class Capitals extends Component {
           <div className="question-container">
             <select
               value={activeCapitalId}
+              onChange={onChangeCapital}
             >
               {countryAndCapitalsList.map(eachCountry => (
                 <option key={eachCountry.id} value={eachCountry.id}>

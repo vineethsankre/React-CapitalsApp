@@ -59,7 +59,7 @@ class Capitals extends Component {
             </select>
             <p>is capital of which country</p>
           </div>
-          <p>{selectedCountry}</p>
+          <p>{country}</p>
         </div>
       </div>
     )

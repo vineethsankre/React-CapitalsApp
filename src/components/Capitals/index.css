@@ -1,1 +1,19 @@
-/* Write your CSS here */
+.app-container {
+  background-color: #93c5fd;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.capitals-container {
+  background-color: #f8fafc;
+  border-radius: 12px;
+  width: 70%;
+  padding: 25px 30px 20px 30px;
+}
+.heading {
+  font-size: 25px;
+  font-family: 'Roboto';
+  color: #1e293b;
+  font-weight: 500;
+}

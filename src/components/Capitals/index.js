@@ -1,3 +1,6 @@
+import {Component} from 'react'
+import './index.css'
+
 const countryAndCapitalsList = [
   {
     id: 'NEW_DELHI',
@@ -26,4 +29,16 @@ const countryAndCapitalsList = [
   },
 ]
 
-// Write your code here
+class Capitals extends Component {
+  render() {
+    return (
+      <div className="app-container">
+        <div className="capitals-container">
+          <h1 className="heading">Countries and Capitals</h1>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default Capitals

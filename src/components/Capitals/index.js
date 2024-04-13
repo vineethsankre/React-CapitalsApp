@@ -39,7 +39,7 @@ class Capitals extends Component {
     const selectedCountry = countryAndCapitalsList.find(
       country => country.id === selectedCapitalId,
     )
-    this.setState({selectedOptionId: selectedCapitalId})
+    this.setState({activeCapitalId: selectedCapitalId})
   }
 
   render() {
